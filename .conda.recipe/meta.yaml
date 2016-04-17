@@ -1,0 +1,28 @@
+package:
+  name: elemental-server
+  version: "0.1.0dev0"
+
+source:
+  path: ../
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - elemental-backend
+  run:
+    - python
+    - falcon
+    - elemental-backend
+
+test:
+  requires:
+    - pytest
+  imports:
+    - elemental_server
+
+about:
+  home: https://github.com/artplusplus/elemental-server
+  summary: Provides http/json access to an elemental-backend by using falcon.
+  license: MPLv2
+  license_file: LICENSE
