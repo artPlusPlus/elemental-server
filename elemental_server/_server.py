@@ -21,10 +21,10 @@ class Server(falcon.API):
         self._attribute_instances = ResourceCollection(self._controller, 'AttributeInstance')
 
         self.add_route('/resources/{resource_id}', self._resource)
-        self.add_route('/content_types', self._content_types)
-        self.add_route('/attribute_types', self._attribute_types)
-        self.add_route('/content_instances', self._content_instances)
-        self.add_route('/attribute_instances', self._attribute_instances)
+        self.add_route('/ContentType', self._content_types)
+        self.add_route('/AttributeType', self._attribute_types)
+        self.add_route('/ContentInstance', self._content_instances)
+        self.add_route('/AttributeInstance', self._attribute_instances)
 
     def import_resource(self, resource_type, resource_data, data_format):
         self._controller.import_resource(resource_type, resource_data, data_format)

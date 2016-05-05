@@ -18,7 +18,7 @@ __project__ = 'elemental-server'
 
 __version__ = '0.1'
 
-__release__ = '0.1.0dev0'
+__release__ = '0.1.1dev0'
 
 __classifiers__ = [
     'Development Status :: 1 - Planning',

@@ -22,7 +22,8 @@ class Resource(object):
             resp.body = transaction.outbound_payload
 
     def on_put(self, req, resp, resource_id):
-        transaction = transactions.Put(resource_id, 'json', req.stream.read())
+        inbound_payload = str(req.stream.read(), encoding='utf-8')
+        transaction = transactions.Put(resource_id, 'json', inbound_payload)
         self._controller.process_transaction(transaction)
 
         if transaction.errors:

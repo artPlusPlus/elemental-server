@@ -9,9 +9,9 @@ class ResourceCollection(object):
         self._resource_type = resource_type
 
     def on_post(self, req, resp):
-        transaction = transactions.Post(self._resource_type, 'json',
-                                        req.stream.read())
-        self._controller.ProcessTransaction(transaction)
+        inbound_payload = str(req.stream.read(), encoding='utf-8')
+        transaction = transactions.Post(self._resource_type, 'json', inbound_payload)
+        self._controller.process_transaction(transaction)
 
         if transaction.errors:
             pass
